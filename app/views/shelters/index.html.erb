@@ -3,3 +3,5 @@
 <% @shelters.each do |shelter|%>
     <h3><%= link_to shelter.name, "/shelters/#{shelter.id}" %>
 <% end %>
+
+<%= link_to "Add New Shelter", "shelters/new" %>

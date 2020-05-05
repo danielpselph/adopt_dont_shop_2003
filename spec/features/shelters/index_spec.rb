@@ -8,7 +8,7 @@ RSpec.describe "shelter index page" do
         shelter2 = Shelter.create(name: "Turkey Paradise", address: "876 Sandwich Lane", city: "Cheyenne", state: "WY", zip: "23456")
 
 
-        visit "/shelters"
+        visit shelters_path
 
         expect(page).to have_content(shelter1.name) 
         expect(page).to have_link(shelter2.name) 

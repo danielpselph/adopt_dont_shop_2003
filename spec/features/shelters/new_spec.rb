@@ -1,21 +1,32 @@
 require 'rails_helper'
 
-# RSpec.describe "shelter new page" do
-#   context "as a visitor" do
-#     it "can see name of each shelter" do
+RSpec.describe "shelter new page" do
+  context "as a visitor" do
+    it "create a new shelter" do
 
-#         shelter1 = Shelter.create(name: "Randys Rodent Ranch", address: "555 Hamster Ave", city: "Richmond", state: "VA", zip: "12345")
-#         shelter2 = Shelter.create(name: "Turkey Paradise", address: "876 Sandwich Lane", city: "Cheyenne", state: "WY", zip: "23456")
+        shelter2 = Shelter.create(name: "Turkey Paradise", address: "876 Sandwich Lane", city: "Cheyenne", state: "WY", zip: "23456")
 
+        visit shelters_path
 
-#         visit "/shelters"
+        click_link "Add New Shelter"
 
-#         expect(page).to have_content(shelter1.name) 
-#         expect(page).to have_link(shelter2.name) 
+        expect(current_path).to eq(shelters_new_path) 
 
-#     end
-#   end
-# end
+        fill_in :name,	with: "Bob" 
+        fill_in :address,	with: "222 St" 
+        fill_in :city,	with: "Denver" 
+        fill_in :state,	with: "CO" 
+        fill_in :zip,	with: "80220" 
+
+        click_button "Create Shelter"
+
+        expect(current_path).to eq(shelters_path)
+
+        expect(page).to have_content("Bob") 
+
+    end
+  end
+end
 
 
 # As a visitor

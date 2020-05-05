@@ -12,4 +12,5 @@
     <%= label_tag :zip %>
     <%= text_field_tag :zip, @shelter.zip %><br>
     <%= submit_tag "Update Shelter" %>
-<% end %>
+<% end %><br>
+<%= link_to "Back to Shelters", shelters_path %>

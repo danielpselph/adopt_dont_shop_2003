@@ -31,7 +31,6 @@ class SheltersController < ApplicationController
         redirect_to shelters_path
     end
     
-    
     private
 
     def shelter_params

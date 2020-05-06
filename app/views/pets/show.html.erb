@@ -4,4 +4,5 @@
 <h4>Description: <%= @pet.age %></h4><br>
 <h4>Sex: <%= @pet.sex %></h4><br>
 <h4>Adoption Status: <%= @pet.adoptable? %></h4><br>
+<%= link_to 'Update Pet Info', "/pets/#{@pet.id}/edit" %>
 

@@ -10,8 +10,12 @@ RSpec.describe "shelter pets index page" do
                                     age: 2,
                                     sex: "male")
 
-        visit "/shelters/#{shelter1.id}/pets"
+        visit "/shelters/#{shelter1.id}"
 
+        click_link "View Available Pets"
+
+        expect(current_path).to eq("/shelters/#{shelter1.id}/pets")
+        
         click_link "Add New Pet"
 
         expect(current_path).to eq("/shelters/#{shelter1.id}/pets/new") 
@@ -34,7 +38,7 @@ RSpec.describe "shelter pets index page" do
         expect(page).to have_content("Adoptable") 
 
         expect(page).to have_content(pet1.name) 
-        expect(page).to have_content(pet1.adoption_status) 
+        expect(page).to have_content(pet1.adoptable?) 
       
     end
   end

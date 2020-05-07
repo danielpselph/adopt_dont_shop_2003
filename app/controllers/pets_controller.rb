@@ -27,14 +27,16 @@ class PetsController < ApplicationController
         pet.update(pet_params)
         redirect_to "/pets/#{pet.id}"
     end
-    
-    
+
+    def destroy
+        pet = Pet.find(params[:pet_id])
+        pet.delete
+        redirect_to pets_path
+    end
     
     private
 
     def pet_params
         params.permit(:name, :image, :sex, :description, :age)
     end
-    
-    
 end

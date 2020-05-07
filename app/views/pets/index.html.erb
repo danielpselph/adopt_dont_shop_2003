@@ -4,9 +4,9 @@
     <section id="pet-<%= pet.id %>">
         <h3>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h3>
         <img style="width:40vw" src="<%= pet.image %>">
-        <h4>Age: <%= pet.age %></h4>
-        <h4>Sex: <%= pet.sex %></h4>
-        <h4>Shelter: <%= link_to "#{pet.shelter.name}", "/shelters/#{pet.shelter.id}" %></h5><hr>
+        <p>Age: <%= pet.age %></p>
+        <p>Sex: <%= pet.sex %></p>
+        <p>Shelter: <%= link_to "#{pet.shelter.name}", "/shelters/#{pet.shelter.id}" %></p><hr>
     </section>
 <% end %><br>
 <%= link_to "Back to Shelters", shelters_path %>

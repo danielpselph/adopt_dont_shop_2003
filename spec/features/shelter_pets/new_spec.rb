@@ -39,7 +39,6 @@ RSpec.describe "shelter pets index page" do
 
         expect(page).to have_content(pet1.name) 
         expect(page).to have_content(pet1.adoptable?) 
-
     end
   end
 end

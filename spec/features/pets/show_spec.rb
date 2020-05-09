@@ -10,7 +10,6 @@ RSpec.describe "pet show page" do
                                     age: 2,
                                     sex: "male")
 
-
         visit pets_path
 
         click_link "#{pet1.name}"
@@ -23,7 +22,6 @@ RSpec.describe "pet show page" do
         expect(page).to have_content(pet1.sex) 
         expect(page).to have_content(pet1.description) 
         expect(page).to have_content(pet1.adoptable?) 
-              
     end
   end
 end

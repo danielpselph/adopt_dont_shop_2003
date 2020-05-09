@@ -23,7 +23,6 @@ RSpec.describe "shelter new page" do
         expect(current_path).to eq(shelters_path)
 
         expect(page).to have_content("Bob") 
-
     end
   end
 end

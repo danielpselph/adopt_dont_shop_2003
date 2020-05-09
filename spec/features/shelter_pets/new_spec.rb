@@ -39,18 +39,7 @@ RSpec.describe "shelter pets index page" do
 
         expect(page).to have_content(pet1.name) 
         expect(page).to have_content(pet1.adoptable?) 
-      
+
     end
   end
 end
-
-# - image
-# - name
-# - description
-# - approximate age
-# - sex ('female' or 'male')
-# And I click the button "Create Pet"
-# Then a `POST` request is sent to '/shelters/:shelter_id/pets',
-# a new pet is created for that shelter,
-# that pet has a status of 'adoptable',
-# and I am redirected to the Shelter Pets Index page where I can see the new pet listed

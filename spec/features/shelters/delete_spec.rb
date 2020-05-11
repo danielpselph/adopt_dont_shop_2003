@@ -11,7 +11,7 @@ RSpec.describe "shelter delete page" do
 
         click_link "Delete Shelter"
 
-        expect(current_path).to eq(shelters_path) 
+        expect(current_path).to eq("/shelters") 
 
         expect(page).to_not have_content(shelter1.name) 
         expect(page).to_not have_content("Randys Rodent Ranch") 

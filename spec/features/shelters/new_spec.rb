@@ -6,11 +6,11 @@ RSpec.describe "shelter new page" do
 
         shelter2 = Shelter.create(name: "Turkey Paradise", address: "876 Sandwich Lane", city: "Cheyenne", state: "WY", zip: "23456")
 
-        visit shelters_path
+        visit "/shelters"
 
         click_link "Add New Shelter"
 
-        expect(current_path).to eq(shelters_new_path) 
+        expect(current_path).to eq("/shelters/new") 
 
         fill_in :name,	with: "Bob" 
         fill_in :address,	with: "222 St" 
@@ -20,7 +20,7 @@ RSpec.describe "shelter new page" do
 
         click_button "Create Shelter"
 
-        expect(current_path).to eq(shelters_path)
+        expect(current_path).to eq("/shelters")
 
         expect(page).to have_content("Bob") 
     end

@@ -30,7 +30,7 @@ class PetsController < ApplicationController
 
     def destroy
         Pet.destroy(params[:pet_id])
-        redirect_to pets_path
+        redirect_to "/pets"
     end
     
     private

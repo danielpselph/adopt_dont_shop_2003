@@ -10,7 +10,7 @@ RSpec.describe "pet show page" do
                                     age: 2,
                                     sex: "male")
 
-        visit pets_path
+        visit "/pets"
 
         click_link "#{pet1.name}"
 

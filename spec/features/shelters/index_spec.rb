@@ -11,7 +11,7 @@ RSpec.describe "shelter index page" do
 
     it "can see name of each shelter" do
 
-        visit shelters_path
+        visit "/shelters"
 
         expect(page).to have_content(@shelter1.name) 
         expect(page).to have_link(@shelter2.name) 
@@ -20,7 +20,7 @@ RSpec.describe "shelter index page" do
 
     it "has link to edit shelter" do
       
-      visit shelters_path
+      visit "/shelters"
       
       within ".shelter-#{@shelter1.id}" do
 
@@ -32,13 +32,13 @@ RSpec.describe "shelter index page" do
 
       it "has link to delete shelter" do
       
-        visit shelters_path
+        visit "/shelters"
         
         within ".shelter-#{@shelter2.id}" do
   
           click_link "Delete Shelter"
   
-          expect(current_path).to eq(shelters_path) 
+          expect(current_path).to eq("/shelters") 
         end
       end
   end

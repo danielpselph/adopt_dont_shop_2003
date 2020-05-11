@@ -18,7 +18,7 @@ RSpec.describe "pet index page" do
 
     it "can see each pet and their info" do
 
-        visit pets_path
+        visit "/pets"
 
         within ".pet-#{@pet1.id}" do
             expect(page).to have_content(@pet1.name) 
@@ -39,7 +39,7 @@ RSpec.describe "pet index page" do
 
     it "has link to update pet info" do
     
-      visit pets_path
+      visit "/pets"
       
       within ".pet-#{@pet1.id}" do 
         click_link "Update Pet Info"
@@ -49,11 +49,11 @@ RSpec.describe "pet index page" do
 
     it "has link to delete" do
     
-      visit pets_path
+      visit "/pets"
       
       within ".pet-#{@pet1.id}" do 
         click_link "Delete Pet"
-        expect(current_path).to eq(pets_path) 
+        expect(current_path).to eq("/pets") 
       end
     end
   end

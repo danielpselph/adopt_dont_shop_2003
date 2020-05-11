@@ -8,7 +8,7 @@ class SheltersController < ApplicationController
 
     def create
         shelter = Shelter.create(shelter_params)
-        redirect_to shelters_path
+        redirect_to "/shelters"
     end
     
     def show
@@ -27,7 +27,7 @@ class SheltersController < ApplicationController
 
     def destroy
         Shelter.destroy(params[:id])
-        redirect_to shelters_path
+        redirect_to "/shelters"
     end
     
     private
